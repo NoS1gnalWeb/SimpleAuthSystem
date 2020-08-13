@@ -1,6 +1,11 @@
 <?php 
+        require_once 'AuthSystem/authsystem.class.php';
+    
 
-    use Database;
+        $auth = new AuthSystem();
+        // Connect database
+        $auth->Connect('localhost', 'authsystem', 'root', '');
 
-    $bdd = new Database('localhost', 'ccff', 'root', '');
-    $bdd->Connect();
+        $auth->Fetch('auth');
+
+        
